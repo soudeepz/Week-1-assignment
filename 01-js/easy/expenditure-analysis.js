@@ -25,8 +25,11 @@ function getUniqueCategory(transactions) {
   let i = 0;
   if (listOfCategories.length > 1) {
 
-    uniqueCategory = listOfCategories.filter((item,
-      index) => listOfCategories.indexOf(item) === index);
+    listOfCategories.forEach(element => {
+      if (!uniqueCategory.includes(element)) {
+        uniqueCategory.push(element);
+      }
+    });
 
   } else {
 
